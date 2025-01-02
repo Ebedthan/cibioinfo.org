@@ -32,23 +32,23 @@
                     >
                 </a>
 
-                <ul class="nav nav-pills">
+                <ul class="nav nav-pills" id="hea">
                     <li class="nav-item">
-                        <a href="#" class="nav-link active" aria-current="page"
+                        <a href="/" class="nav-link active" aria-current="page"
                             >Home</a
                         >
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link">About</a>
+                        <a href="about.html" class="nav-link">About</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link">People</a>
+                        <a href="people.html" class="nav-link">People</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link">Software</a>
+                        <a href="software.html" class="nav-link">Software</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link">News</a>
+                        <a href="news.html" class="nav-link">News</a>
                     </li>
                 </ul>
             </header>
@@ -161,5 +161,19 @@
             integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
             crossorigin="anonymous"
         ></script>
+        <script>
+            var header = document.getElementById("hea");
+            var navs = header.getElementsByClassName("nav-link");
+            for (var i = 0; i < navs.length; i++) {
+                navs[i].addEventListener("click", function () {
+                    var current = document.getElementsByClassName("active");
+                    current[0].className = current[0].className.replace(
+                        " active",
+                        "",
+                    );
+                    this.className += " active";
+                });
+            }
+        </script>
     </body>
 </html>
